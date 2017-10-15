@@ -2,7 +2,7 @@
 python Data_Simulation.py repSaveData n_clone n_mutation cell_size_min cell_size_max sample_size read_coverage n_trees
 
 #### Parameters in the above command:
-repSaveData: the repository to save the simulated data
+repSaveData: the folder to save the simulated data
 n_clone: the number of clones in a simulated tree
 n_mutation: the number of mutations in a simulated tree
 cell_size_min: minimum cell population size in a simulated tree
@@ -15,9 +15,9 @@ For example, to simulate data used in MIPUP (Minimum perfect unmixed phylogenies
 python Data_Simulation.py .../path_to_the_repositoty_to_save_the_simulated_data  10 100 100 200 [5,10,15,20] [100,1000,10000] 100
 
 #### Output:
-the simulated data of each tool will be saved in repositories: Data_MIPUP, Data_LICHeE, Data_AncesTree, Data_CITUP, Data_Treeomics, respectively. In each repository, data is catogorised based on its sample size and read coverage and each catogory is save in a repository named in the format: samplesize_readcoverage. 
+the simulated data of each tool will be saved in repositories: Data_MIPUP, Data_LICHeE, Data_AncesTree, Data_CITUP, Data_Treeomics, respectively. In each folder, data is catogorised based on its sample size and read coverage and each catogory is save in a folder named in the format: samplesize_readcoverage. 
 
-In addition, information of each simulated tree is saved in repositoried named in the format: samplesize_readcoverage. In each repository, there are a text file saving clonal information of the tree and a gpickle file saving the tree topology, these information will be used when performing evaluation. 
+In addition, information of each simulated tree is saved in repositoried named in the format: samplesize_readcoverage. In each folder, there are a text file saving clonal information of the tree and a gpickle file saving the tree topology, these information will be used when performing evaluation. 
 
 ######################################################################################
 ### Example of evaluating MIPUP using the 1st dataset of 5 samples and read coverage 100:
