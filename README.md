@@ -15,14 +15,14 @@ For example, to simulate data used in MIPUP (Minimum perfect unmixed phylogenies
 >python Data_Simulation.py .../path_to_the_folder_to_save_the_simulated_data  10 100 100 200 [5,10,15,20] [100,1000,10000] 100
 
 #### Output:
-the simulated data of each tool will be saved in repositories: Data_MIPUP, Data_LICHeE, Data_AncesTree, Data_CITUP, Data_Treeomics, respectively. In each folder, data is catogorised based on its sample size and read coverage and each catogory is save in a folder named in the format: samplesize_readcoverage. 
+the simulated data of each tool will be saved in folders: Data_MIPUP, Data_LICHeE, Data_AncesTree, Data_CITUP, Data_Treeomics, respectively. In each folder, datasetes are catogorised based on their sample sizes and read coverages, and each catogory is saved in a folder named in the format: samplesize_readcoverage. 
 
-In addition, information of each simulated tree is saved in repositoried named in the format: samplesize_readcoverage. In each folder, there are a text file saving clonal information of the tree and a gpickle file saving the tree topology, these information will be used when performing evaluation. 
+In addition, information of each simulated tree is saved in folder named in the format: samplesize_readcoverage. In each folder, there are a text file saving clonal information of a tree and a gpickle file saving the tree topology of the same tree, these information will be used when performing evaluation. 
 
 ######################################################################################
 ### Example of evaluating MIPUP using the 1st dataset of 5 samples and read coverage 100:
 <img width="1117" alt="screen shot 2017-10-14 at 7 13 09 pm" src="https://user-images.githubusercontent.com/18735754/31577455-7dbc1f0e-b117-11e7-9e20-4fb761400762.png">
-here, 5_100_1_G_Dir.gpickle contains tree topology of the 1st dataset, 5_100_1.txt contains clonal information of the 1st dataset, Data_MIPUP_1_ip_columns.csv and Data_MIPUP_1_ip_tree.dot are the outputs of MIPUP of the 1st dataset.
+here, 5_100_1_G_Dir.gpickle contains tree topology of the 1st datasete of 5 samples and read coverage 100, 5_100_1.txt contains clonal information of the same datasete, Data_MIPUP_1_ip_columns.csv and Data_MIPUP_1_ip_tree.dot are the outputs of MIPUP of the 1st datasete.
 
 ### Example of evaluating LICHeE using the 1st dataset of 5 samples and read coverage 100:
 <img width="1113" alt="screen shot 2017-10-14 at 7 44 54 pm" src="https://user-images.githubusercontent.com/18735754/31577492-38a80116-b118-11e7-8e07-72af3318f2f6.png">
