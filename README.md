@@ -1,18 +1,18 @@
 ### To simulate data, run command:
-python Data_Simulation.py repSaveData n_clone n_mutation cell_size_min cell_size_max sample_size read_coverage n_trees
+>python Data_Simulation.py repSaveData n_clone n_mutation cell_size_min cell_size_max sample_size read_coverage n_trees
 
 #### Parameters in the above command:
-repSaveData: the folder to save the simulated data
-n_clone: the number of clones in a simulated tree
-n_mutation: the number of mutations in a simulated tree
-cell_size_min: minimum cell population size in a simulated tree
-cell_size_max: maxmum cell population size in a simulated tree
-sample_size: a list of samples sizes 
-read_coverage: a list of read coverages 
-n_trees: the number of simulated trees
+- repSaveData: the folder to save the simulated data
+- n_clone: the number of clones in a simulated tree
+- n_mutation: the number of mutations in a simulated tree
+- cell_size_min: minimum cell population size in a simulated tree
+- cell_size_max: maxmum cell population size in a simulated tree
+- sample_size: a list of samples sizes 
+- read_coverage: a list of read coverages 
+- n_trees: the number of simulated trees
 
 For example, to simulate data used in MIPUP (Minimum perfect unmixed phylogenies for multi-sampled tumors via branchings and ILP), run the following command:
-python Data_Simulation.py .../path_to_the_repositoty_to_save_the_simulated_data  10 100 100 200 [5,10,15,20] [100,1000,10000] 100
+>python Data_Simulation.py .../path_to_the_folder_to_save_the_simulated_data  10 100 100 200 [5,10,15,20] [100,1000,10000] 100
 
 #### Output:
 the simulated data of each tool will be saved in repositories: Data_MIPUP, Data_LICHeE, Data_AncesTree, Data_CITUP, Data_Treeomics, respectively. In each folder, data is catogorised based on its sample size and read coverage and each catogory is save in a folder named in the format: samplesize_readcoverage. 
