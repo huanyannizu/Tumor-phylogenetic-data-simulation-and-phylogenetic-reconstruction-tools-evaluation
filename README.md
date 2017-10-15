@@ -1,4 +1,4 @@
-### To simulate data, run command:
+#### To simulate data, run command:
 >python Data_Simulation.py repSaveData n_clone n_mutation cell_size_min cell_size_max sample_size read_coverage n_trees
 
 #### Parameters in the above command:
