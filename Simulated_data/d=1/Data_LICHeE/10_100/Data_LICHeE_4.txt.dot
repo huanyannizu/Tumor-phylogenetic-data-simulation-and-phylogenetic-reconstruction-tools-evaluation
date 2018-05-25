@@ -1,0 +1,52 @@
+digraph G { 
+size ="10,10"
+forcelabels=true
+0 -> 6[ label="" fontname="Arial Bold" fontsize=18];
+1 -> 7[ label="" fontname="Arial Bold" fontsize=18];
+2 -> 4[ label="" fontname="Arial Bold" fontsize=18];
+6 -> 3[ label="" fontname="Arial Bold" fontsize=18];
+6 -> 2[ label="" fontname="Arial Bold" fontsize=18];
+6 -> 1[ label="" fontname="Arial Bold" fontsize=18];
+7 -> 9[ label="" fontname="Arial Bold" fontsize=18];
+7 -> 8[ label="" fontname="Arial Bold" fontsize=18];
+8 -> 5[ label="" fontname="Arial Bold" fontsize=18];
+9 -> 11[ label="0.2" fontname="Arial Bold" fontsize=18];
+3 -> 12[ label="0.13" fontname="Arial Bold" fontsize=18];
+4 -> 12[ label="0.13" fontname="Arial Bold" fontsize=18];
+9 -> 12[ label="0.11" fontname="Arial Bold" fontsize=18];
+4 -> 13[ label="0.21" fontname="Arial Bold" fontsize=18];
+1 -> 13[ label="0.28" fontname="Arial Bold" fontsize=18];
+5 -> 14[ label="0.18" fontname="Arial Bold" fontsize=18];
+3 -> 14[ label="0.14" fontname="Arial Bold" fontsize=18];
+8 -> 15[ label="0.12" fontname="Arial Bold" fontsize=18];
+3 -> 16[ label="0.25" fontname="Arial Bold" fontsize=18];
+2 -> 16[ label="0.22" fontname="Arial Bold" fontsize=18];
+4 -> 17[ label="0.1" fontname="Arial Bold" fontsize=18];
+9 -> 17[ label="0.11" fontname="Arial Bold" fontsize=18];
+2 -> 18[ label="0.12" fontname="Arial Bold" fontsize=18];
+7 -> 18[ label="0.19" fontname="Arial Bold" fontsize=18];
+9 -> 19[ label="0.21" fontname="Arial Bold" fontsize=18];
+4 -> 20[ label="0.09" fontname="Arial Bold" fontsize=18];
+9 -> 20[ label="0.11" fontname="Arial Bold" fontsize=18];
+0 [ shape=plaintext label="GL" fontname="Arial Bold" fontsize=20 style=filled fillcolor="#ffffff" color="#000000" width=0.625 heigth=0.625];
+1 [ shape=circle label="2" fontname="Arial Bold" fontsize=20 style=filled fillcolor="#e3cda8" color="#000000" width=0.625 heigth=0.625];
+2 [ shape=circle label="6" fontname="Arial Bold" fontsize=20 style=filled fillcolor="#b1b1ba" color="#000000" width=0.625 heigth=0.625];
+3 [ shape=circle label="5" fontname="Arial Bold" fontsize=20 style=filled fillcolor="#e0b6c7" color="#000000" width=0.625 heigth=0.625];
+4 [ shape=circle label="4" fontname="Arial Bold" fontsize=20 style=filled fillcolor="#ffb2b2" color="#000000" width=0.625 heigth=0.625];
+5 [ shape=circle label="9" fontname="Arial Bold" fontsize=20 style=filled fillcolor="#e9e1db" color="#000000" width=0.625 heigth=0.625];
+6 [ shape=circle label="12" fontname="Arial Bold" fontsize=20 style=filled fillcolor="#81b9c0" color="#000000" width=0.5 heigth=0.5];
+7 [ shape=circle label="11" fontname="Arial Bold" fontsize=20 style=filled fillcolor="#8bbadf" color="#000000" width=0.4583333333333333 heigth=0.4583333333333333];
+8 [ shape=circle label="9" fontname="Arial Bold" fontsize=20 style=filled fillcolor="#b6b89f" color="#000000" width=0.625 heigth=0.625];
+9 [ shape=circle label="40" fontname="Arial Bold" fontsize=20 style=filled fillcolor="#c8dcc1" color="#000000" width=1.0416666666666667 heigth=1.0416666666666667];
+11 [image="/u/85/lix10/unix/Documents/New_project/d=1/Data_LICHeE/10_100/lichee_dot_img_temp/img_1525889768078_11.png" shape=square label="sample0" labelloc=b fontname="Arial Bold" fontsize=20 style=filled fillcolor="#ffffff" color="#000000" width=0.8333333333333334 heigth=0.8333333333333334];
+12 [image="/u/85/lix10/unix/Documents/New_project/d=1/Data_LICHeE/10_100/lichee_dot_img_temp/img_1525889768078_12.png" shape=square label="sample1" labelloc=b fontname="Arial Bold" fontsize=20 style=filled fillcolor="#ffffff" color="#000000" width=0.8333333333333334 heigth=0.8333333333333334];
+13 [image="/u/85/lix10/unix/Documents/New_project/d=1/Data_LICHeE/10_100/lichee_dot_img_temp/img_1525889768078_13.png" shape=square label="sample2" labelloc=b fontname="Arial Bold" fontsize=20 style=filled fillcolor="#ffffff" color="#000000" width=0.8333333333333334 heigth=0.8333333333333334];
+14 [image="/u/85/lix10/unix/Documents/New_project/d=1/Data_LICHeE/10_100/lichee_dot_img_temp/img_1525889768078_14.png" shape=square label="sample3" labelloc=b fontname="Arial Bold" fontsize=20 style=filled fillcolor="#ffffff" color="#000000" width=0.8333333333333334 heigth=0.8333333333333334];
+15 [image="/u/85/lix10/unix/Documents/New_project/d=1/Data_LICHeE/10_100/lichee_dot_img_temp/img_1525889768078_15.png" shape=square label="sample4" labelloc=b fontname="Arial Bold" fontsize=20 style=filled fillcolor="#ffffff" color="#000000" width=0.8333333333333334 heigth=0.8333333333333334];
+16 [image="/u/85/lix10/unix/Documents/New_project/d=1/Data_LICHeE/10_100/lichee_dot_img_temp/img_1525889768078_16.png" shape=square label="sample5" labelloc=b fontname="Arial Bold" fontsize=20 style=filled fillcolor="#ffffff" color="#000000" width=0.8333333333333334 heigth=0.8333333333333334];
+17 [image="/u/85/lix10/unix/Documents/New_project/d=1/Data_LICHeE/10_100/lichee_dot_img_temp/img_1525889768078_17.png" shape=square label="sample6" labelloc=b fontname="Arial Bold" fontsize=20 style=filled fillcolor="#ffffff" color="#000000" width=0.8333333333333334 heigth=0.8333333333333334];
+18 [image="/u/85/lix10/unix/Documents/New_project/d=1/Data_LICHeE/10_100/lichee_dot_img_temp/img_1525889768078_18.png" shape=square label="sample7" labelloc=b fontname="Arial Bold" fontsize=20 style=filled fillcolor="#ffffff" color="#000000" width=0.8333333333333334 heigth=0.8333333333333334];
+19 [image="/u/85/lix10/unix/Documents/New_project/d=1/Data_LICHeE/10_100/lichee_dot_img_temp/img_1525889768078_19.png" shape=square label="sample8" labelloc=b fontname="Arial Bold" fontsize=20 style=filled fillcolor="#ffffff" color="#000000" width=0.8333333333333334 heigth=0.8333333333333334];
+20 [image="/u/85/lix10/unix/Documents/New_project/d=1/Data_LICHeE/10_100/lichee_dot_img_temp/img_1525889768078_20.png" shape=square label="sample9" labelloc=b fontname="Arial Bold" fontsize=20 style=filled fillcolor="#ffffff" color="#000000" width=0.8333333333333334 heigth=0.8333333333333334];
+{ rank = sink; 11; 12; 13; 14; 15; 16; 17; 18; 19; 20; } 
+}
