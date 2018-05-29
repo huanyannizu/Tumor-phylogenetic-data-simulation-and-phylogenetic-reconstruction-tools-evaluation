@@ -45,6 +45,11 @@ def prufer_to_tree(a):
     return tree
 
 def clone_size(n, total):
+    '''
+    return the number of mutations assigned to each clone:
+    the idea is to return a randomly chosen list of n positive integers summing to total.
+    Each such list is equally likely to occur.
+    '''
     dividers = sorted(random.sample(xrange(1, total), n - 1))
     return [a - b for a, b in zip(dividers + [total], [0] + dividers)]
 
@@ -59,7 +64,7 @@ def assign_mutation(mutation,cz):
     
     return Clone
 
-def get_samples(n_sample,n_clone):	
+def get_samples(n_sample,n_clone):  
     samples = {} 
     for i in range(n_sample):
         c = np.random.randint(2,5) 
@@ -92,7 +97,8 @@ def VAF(n_sample,n_clone,cell_size,n_mutation,read_cov,root,edges,d):
     G=nx.Graph();G.add_nodes_from(range(n_clone));G.add_edges_from(edges)
     p=nx.shortest_path(G,source=root) #paths from root to each node
     edges_with_label = {}
-       
+    
+    
     for node in G.nodes(): #mutation inheritance
         pn = p[node] 
         for k in pn[:-1]:
@@ -120,6 +126,19 @@ def VAF(n_sample,n_clone,cell_size,n_mutation,read_cov,root,edges,d):
         for de in descendants:
             if muta in Clone[de]:
                 Clone[de].remove(muta)
+            
+    '''
+    leaves = [x for x in G_Dir.nodes() if G_Dir.out_degree(x)==0]
+    clones_after_inher = []
+    for leaf in leaves:
+        p=nx.shortest_path(G_Dir,source=root,target=leaf)
+        for i in range(1,len(p)):
+            if p[i] not in clones_after_inher:
+                for muta in Clone[p[i-1]]:
+                    u = np.random.uniform(0,1,1)[0]
+                    if u <= 1:Clone[p[i]].append(muta)
+                clones_after_inher.append(p[i])
+    '''
     
     U = np.zeros((n_sample,n_clone))
     for s in samples.keys():
@@ -152,14 +171,14 @@ def VAF(n_sample,n_clone,cell_size,n_mutation,read_cov,root,edges,d):
             F_unpack_noise[i,p] = x[i,p] / (n[i,p]+0.0)
               
     n_x = np.subtract(n, x)
-    	
+        
     read_count = np.zeros((n_mutation,1))
     for j in range(n_sample):
         read_count = np.c_[read_count,n_x[:,j]]
         read_count = np.c_[read_count,x[:,j]]
     read_count = read_count[:,1:]
     
-    return U,B,F,F_unpack,n,x,F_unpack_noise,samples,G_Dir,new_mutation_in_clone,Clone
+    return U,B,F,F_unpack,n,x,F_unpack_noise,samples,G_Dir,new_mutation_in_clone,Clone,D,mutas
 
 
 ###Functions of creating input for each tool#####################################################################################################################################
@@ -268,8 +287,8 @@ repSaveData,n_clone,n_mutation,cell_size_min,cell_size_max,n_sample,read_cov,d =
 mutation = range(n_mutation); mutation = np.array(mutation)
 
 root,edges,cell_size = tree(n_clone,n_mutation,cell_size_min,cell_size_max)
-U,B,F,F_unpack,n,x,F_unpack_noise,samples,G_Dir,new_mutation_in_clone,Clone = VAF(n_sample,n_clone,cell_size,n_mutation,read_cov,root,edges,d)
-
+U,B,F,F_unpack,n,x,F_unpack_noise,samples,G_Dir,new_mutation_in_clone,Clone,D,mutas = VAF(n_sample,n_clone,cell_size,n_mutation,read_cov,root,edges,d)
+                
 data_mipup=Data_MIPUP(F_unpack_noise,n_mutation,n_sample)
 data_lichee=Data_LICHeE(F_unpack_noise,n_mutation,n_sample)
 data_ancestree=Data_AncesTree(n,x,n_mutation,n_sample) 
@@ -283,6 +302,20 @@ if read_cov == 10000:
     error_rate = 0.03
     data_citup=Data_CITUP(F_unpack_noise,n_mutation,n_sample,error_rate)    
 cov,mu=Data_Treeomics(n,x,n_mutation,n_sample)
+
+f = open(repSaveData + '/%d_%d.txt'%(n_sample,read_cov),'w') 
+f.write(str(root)+ '\n'+'\r')
+f.write(str(edges)+ '\n'+'\r')
+f.write(str(new_mutation_in_clone)+ '\n'+'\r')
+f.write(str(Clone)+ '\n'+'\r')            
+f.write(str(samples)+ '\n'+'\r')
+f.write(str(cell_size)+ '\n'+'\r')
+f.write(str(D)+ '\n'+'\r')
+f.write(str(mutas)+ '\n'+'\r')
+f.flush()
+f.close()
+
+nx.write_gpickle(G_Dir,repSaveData + '/%d_%d_G_Dir.gpickle'%(n_sample,read_cov))
                        
 data_mipup.to_csv(repSaveData + '/Data_MIPUP.txt',sep = '\t',header = False,index = False)
 data_lichee.to_csv(repSaveData + '/Data_LICHeE.txt',sep = '\t',header = False,index = False)
