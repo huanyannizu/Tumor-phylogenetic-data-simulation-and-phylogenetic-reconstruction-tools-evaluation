@@ -1,7 +1,7 @@
 This repository contains implementation of algorithms to simulate tumor phylogenetic data and to evaluate phylogenetic reconstruction tools (including MIPUP, LICHeE, AncesTree, CITUP, Treeomics) from
 
 *MIPUP: Minimum perfect unmixed phylogenies for multi-sampled tumors via branchings in graphs and ILP.
-Edin Husić  Xinyue Li  Ademir Hujdurović  Miika Mehine Romeo Rizzi  Veli Mäkinen  Martin Milanič Alexandru I Tomescu (publised August 2018)*
+Edin Husić,Xinyue Li,Ademir Hujdurović,Miika Mehine,Romeo Rizzi,Veli Mäkinen,Martin Milanič,Alexandru I Tomescu. (publised August 2018)*
 
 #### To simulate tumor phylogenetic data, run command:
 >python Data_Simulation.py repSaveData n_clone n_mutation cell_size_min cell_size_max n_sample read_cov d
